@@ -1,0 +1,34 @@
+# exp: TextClassification
+# mode: 
+#     - train
+    
+# models: 
+#     hf_text_classification_model:
+#         - distilbert/distilgpt2
+#         # - distilbert/distilbert-base-cased
+
+          
+# trainfpath: /home/eheng/NLPScholarFork/final_project/Logic_train_final
+# validfpath: /home/eheng/NLPScholarFork/final_project/Logic_val_final
+# modelfpath: /home/eheng/NLPScholarFork/final_project/Logic_distilgpt2
+# loadPretrained: False
+# numLabels: 2
+# id2label:
+#     1: Positive
+#     0: Negative
+
+exp: TextClassification
+mode: 
+    - evaluate
+    
+models: 
+    hf_text_classification_model:
+        # - /home/eheng/NLPScholarFork/final_project/Logic_distilbert
+        - /home/eheng/NLPScholarFork/final_project/Logic_distilgpt2
+
+datafpath: /home/eheng/NLPScholarFork/final_project/test_tsvs_by_model/Logic_test_final.tsv
+predfpath: /home/eheng/NLPScholarFork/final_project/logic_distilgpt_predictions.tsv
+
+id2label:
+    1: Positive
+    0: Negative
